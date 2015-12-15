@@ -1,0 +1,30 @@
+machine:
+  pre:
+    - echo 'machine.pre'
+
+dependencies:
+  pre:
+    - echo 'dependencies.pre'
+  override:
+    - echo 'dependencies.override'
+  post:
+    - echo 'dependencies.post'
+
+test:
+  pre:
+    - echo 'test.pre'
+  override:
+    - echo 'test.override'
+  post:
+    - echo 'test.post'
+
+deployment:
+  master:
+    branch: master
+    commands:
+      - echo 'deployment.master'
+
+  production:
+    branch: deployment/production
+    commands:
+      - echo 'deployment.production'
